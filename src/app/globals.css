@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-areas {
+  display: grid;
+  grid-template-areas:
+    "a b b"
+    "a c c"
+    "d d d"
+    "e e e"
+    "f f f";
+}
+
+.section-icon {
+  grid-area: a;
+}
+.section-title {
+  grid-area: b;
+}
+.section-date {
+  grid-area: c;
+}
+.section-bio {
+  grid-area: d;
+}
+.section-number {
+  grid-area: e;
+}
+.section-location {
+  grid-area: f;
+}
+
+@media (min-width: 1024px) {
+  .grid-areas {
+    grid-template-areas:
+      "a b c c"
+      "a d d d"
+      "a e e e"
+      "a f f f";
+  }
+}
