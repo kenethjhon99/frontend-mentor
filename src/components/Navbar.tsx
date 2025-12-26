@@ -3,12 +3,20 @@ import SunIcon from "@/components/icons/SunIcon";
 import { useEffect, useState } from "react";
 import MoonIcon from "./icons/MoonIcon";
 
-const initialTheme = localStorage.getItem("theme") || "light" || window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "dark"
-  : "light";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<"light" | "dark">(initialTheme as "light" | "dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+    useEffect(() => {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    }, []);
 
     useEffect(() => {
 
