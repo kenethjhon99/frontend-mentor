@@ -1,4 +1,4 @@
-import SunIcon from "../components/icons/SunIcon";
+import SunIcon from "@/components/icons/SunIcon";
 const Navbar = () => {
   return (
     <header className="mb-10 flex items-center justify-between ">
