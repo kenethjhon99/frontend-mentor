@@ -19,13 +19,15 @@ interface Props {
 
 const UserCardInfo = ({ user }: Props) => {
   return (
-    <article className="grid-areas rounded-xl bg-blue-900 p-4 text-white ">
+    <article className="grid-areas rounded-xl bg-white p-4 shadow-md dark:bg-blue-900 dark:text-white ">
       <div className="section-icon  mx-auto grid h-24 w-24 place-content-center rounded-full bg-gray-200 p-1">
-        {user?.avatar_url && (<img
-          src={user?.avatar_url}
-          alt={user?.login}
-          className="h-full w-full rounded-full object-cover"
-        />)}
+        {user?.avatar_url && (
+          <img
+            src={user?.avatar_url}
+            alt={user?.login}
+            className="h-full w-full rounded-full object-cover"
+          />
+        )}
       </div>
       <div className="section-title">
         <h2 className="text-3xl font-bold">{user?.name}</h2>
@@ -39,10 +41,10 @@ const UserCardInfo = ({ user }: Props) => {
           year: "numeric",
         })}
       </p>
-      <p className="section-bio mt-8 leading-loose">
+      <p className="section-bio mt-8 leading-loose ">
         {user?.bio || "Este usuario no tiene biografía"}
       </p>
-      <div className="section-number mt-4 flex justify-around rounded-xl bg-blue-950 p-8 text-center">
+      <div className="section-number mt-4 flex justify-around rounded-xl bg-blue-50 dark:text-white text-blue-950 dark:bg-blue-950 p-8 text-center">
         <article>
           <p>repos</p>
           <p className="text-xl font-bold">{user?.public_repos}</p>
@@ -61,7 +63,7 @@ const UserCardInfo = ({ user }: Props) => {
           <i>
             {" "}
             <LocationIcon
-              className="fill-white "
+              className="dark:fill-white fill-blue-950"
               width={"1rem"}
             />{" "}
           </i>
@@ -71,7 +73,7 @@ const UserCardInfo = ({ user }: Props) => {
           <i>
             {" "}
             <LinkIcon
-              className="fill-white"
+              className="dark:fill-white fill-blue-950"
               width={"1rem"}
             />{" "}
           </i>
@@ -86,7 +88,7 @@ const UserCardInfo = ({ user }: Props) => {
           <i>
             {" "}
             <TwitterIcon
-              className="fill-white"
+              className="dark:fill-white fill-blue-950"
               width={"1rem"}
             />{" "}
           </i>
@@ -99,7 +101,7 @@ const UserCardInfo = ({ user }: Props) => {
           <i>
             {" "}
             <BuildingIcon
-              className="fill-white"
+              className="dark:fill-white fill-blue-950"
               width={"1rem"}
             />{" "}
           </i>
