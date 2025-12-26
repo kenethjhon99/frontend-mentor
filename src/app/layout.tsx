@@ -2,9 +2,11 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Space_Grotesk } from "next/font/google";
+//import { Space_Grotesk } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+//const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -18,8 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>
-        <div className="grid min-h-screen place-content-center bg-gray-800">
+      <body className={robotoMono.className}>
+        <div className="grid min-h-screen place-content-center bg-gray-800 px-4">
           <div className="sm:w-[500px] md:w-[600px] lg:w-[700px] ">
             <Navbar />
             {children}
